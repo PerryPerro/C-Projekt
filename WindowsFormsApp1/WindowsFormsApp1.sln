@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{FA635DFC-720C-484A-8F23-E534DD97EECB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{83CC37F0-4AB0-4141-8ED6-103A648E59DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{B4E8E152-00F9-443D-BA22-A094A0F4A378}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{FA635DFC-720C-484A-8F23-E534DD97EECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA635DFC-720C-484A-8F23-E534DD97EECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA635DFC-720C-484A-8F23-E534DD97EECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83CC37F0-4AB0-4141-8ED6-103A648E59DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83CC37F0-4AB0-4141-8ED6-103A648E59DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83CC37F0-4AB0-4141-8ED6-103A648E59DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83CC37F0-4AB0-4141-8ED6-103A648E59DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4E8E152-00F9-443D-BA22-A094A0F4A378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4E8E152-00F9-443D-BA22-A094A0F4A378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4E8E152-00F9-443D-BA22-A094A0F4A378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4E8E152-00F9-443D-BA22-A094A0F4A378}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

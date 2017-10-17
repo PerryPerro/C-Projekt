@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp1
+namespace ClassLibrary1
 {
-    class Logic
+    public class Class1
     {
     }
 }
