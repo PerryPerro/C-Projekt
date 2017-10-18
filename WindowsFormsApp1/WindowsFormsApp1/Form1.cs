@@ -48,6 +48,20 @@ namespace WindowsFormsApp1
                 listBox1.Items.Add(pods.ElementAt(i));
             }
         }
+        private void setCategory(string category)
+        {
+            category = textBox2.Text;
+            var choosenPod = listBox1.SelectedItem.ToString();
+            listBox2.Items.Add(choosenPod);
+            var categorys = new List<string>();
+
+            categorys.Add(category);
+            for(int i =0; i < categorys.Count; i++)
+            {
+                comboBox1.Items.Add(categorys.item)
+            }
+        }
+
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -62,6 +76,17 @@ namespace WindowsFormsApp1
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            setCategory(textBox2.Text);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            
         }
     }
 }
