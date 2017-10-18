@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
     {
         public string xml = "";
         private List<string> pods = new List<string>();
-        
+        WMPLib.WindowsMediaPlayer Player;
         public Form1()
         {
             InitializeComponent();
@@ -159,13 +159,21 @@ namespace WindowsFormsApp1
 
             }
         }
+        private void PlayFile(String url)
+        {
+            Player = new WMPLib.WindowsMediaPlayer();
+            Player.URL = url;
+            Player.controls.play();
+        }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
+            PlayFile(@"C:\Users\Andreas\Downloads\Hejsan.mp3");
 
-            wplayer.URL = @"C:\Users\AccExD\Downloads\test.mp3";
-            wplayer.controls.play();
+            //WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
+
+            //wplayer.URL = @"C:\Users\AccExD\Downloads\test.mp3";
+            //wplayer.controls.play();
 
         }
     }
