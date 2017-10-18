@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +20,9 @@ namespace WindowsFormsApp1
         public string xml = "";
         private List<string> pods = new List<string>();
         WMPLib.WindowsMediaPlayer Player;
+        System.Xml.XmlDocument dom = new System.Xml.XmlDocument();
+        private Stream ms = new MemoryStream();
+
         public Form1()
 
         {
@@ -45,7 +50,7 @@ namespace WindowsFormsApp1
             }
 
             //Skapa en objektrepresentation.
-            var dom = new System.Xml.XmlDocument();
+           
             dom.LoadXml(xml);
 
             //Iterera igenom elementet item.
@@ -168,15 +173,51 @@ namespace WindowsFormsApp1
             Player.controls.play();
         }
 
+        //public void PlayMp3FromUrl(string url)
+        //{
+
+        //    var response = WebRequest.Create(url).GetResponse();
+        //    using (var stream = response.GetResponseStream())
+        //    {
+        //        byte[] buffer = new byte[65536]; // 64KB chunks
+        //        int read;
+        //        Player = new WMPLib.WindowsMediaPlayer();
+        //        while ((read = stream.Read(buffer, 0, buffer.Length)) > 0)
+        //        {
+        //            var pos = ms.Position;
+        //            ms.Position = ms.Length;
+        //            ms.Write(buffer, 0, read);
+        //            ms.Position = pos;
+        //        }
+        //        ms.Position = 0;
+        //        using (player blockAlignedStream = new BlockAlignReductionStream(WaveFormatConversionStream.CreatePcmStream(new Mp3FileReader(ms))))
+        //        {
+        //            using (WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer()
+        //            {
+        //                waveOut.Init(blockAlignedStream);
+        //                waveOut.Play();
+
+        //            }
+        //}
+
         private void button5_Click(object sender, EventArgs e)
         {
-            //PlayFile(@"C:\Users\Andreas\Downloads\Hejsan.mp3");
-            Process.Start("wmplayer.exe", @"C:\Users\Andreas\Downloads\Hejsan.mp3");
-            //WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
+            var filePath = "";
+            dom.LoadXml(xml);
+            foreach (System.Xml.XmlNode item
+               in dom.DocumentElement.SelectNodes("channel/item"))
+            {
+                if (item.SelectSingleNode("title").InnerText == listBox2.SelectedItem.ToString())
+                {
+                    
+                    filePath = item.SelectSingleNode("enclosure/@url").InnerText;
+                   
+                   Process.Start("rundll32.exe", "shell32.dll, OpenAs_RunDLL " + filePath);
+                }
 
-            //wplayer.URL = @"C:\Users\AccExD\Downloads\test.mp3";
-            //wplayer.controls.play();
-
+            
+          
         }
     }
 }
+    }
