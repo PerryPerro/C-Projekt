@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,7 @@ namespace WindowsFormsApp1
         private List<string> pods = new List<string>();
         WMPLib.WindowsMediaPlayer Player;
         public Form1()
+
         {
             InitializeComponent();
            
@@ -168,8 +170,8 @@ namespace WindowsFormsApp1
 
         private void button5_Click(object sender, EventArgs e)
         {
-            PlayFile(@"C:\Users\Andreas\Downloads\Hejsan.mp3");
-
+            //PlayFile(@"C:\Users\Andreas\Downloads\Hejsan.mp3");
+            Process.Start("wmplayer.exe", @"C:\Users\Andreas\Downloads\Hejsan.mp3");
             //WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
 
             //wplayer.URL = @"C:\Users\AccExD\Downloads\test.mp3";
